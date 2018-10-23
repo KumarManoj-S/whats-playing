@@ -110,8 +110,8 @@ module.exports = (app) => {
                         if (i < followingLength) {
                             followingSongs.push(songs.body.tracks[i]);
                             followingSongs.sort((songA, songB) => {
-                                const firstField = moment(songA._created);
-                                const secondField = moment(songB._created);
+                                const firstField = songA._created;
+                                const secondField = songB._created;
                                 if (firstField > secondField) return 1;
                                 if (firstField < secondField) return -1;
                                 return 0;
@@ -119,8 +119,8 @@ module.exports = (app) => {
                         } else if (i < globalLength + followingLength) {
                             globalSongs.push(songs.body.tracks[i]);
                             globalSongs.sort((songA, songB) => {
-                                const firstField = moment(songA._created);
-                                const secondField = moment(songB._created);
+                                const firstField = songA._created;
+                                const secondField = songB._created;
                                 if (firstField > secondField) return 1;
                                 if (firstField < secondField) return -1;
                                 return 0;
@@ -128,8 +128,8 @@ module.exports = (app) => {
                         } else {
                             personalSongs.push(songs.body.tracks[i]);
                             personalSongs.sort((songA, songB) => {
-                                const firstField = moment(songA._created);
-                                const secondField = moment(songB._created);
+                                const firstField = songA._created;
+                                const secondField = songB._created;
                                 if (firstField > secondField) return 1;
                                 if (firstField < secondField) return -1;
                                 return 0;
